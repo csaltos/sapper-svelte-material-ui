@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import Nav from '../components/Nav.svelte';
+  import GlobalStyle from "../components/GlobalStyle.svelte";
 
-	export let segment;
+	export let segment: string;
 </script>
 
 <style>
@@ -18,5 +19,6 @@
 <Nav {segment}/>
 
 <main>
+  <GlobalStyle />
 	<slot></slot>
 </main>

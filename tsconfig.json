@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["src/**/*", "node_modules/sapper/**/*"],
+  "exclude": ["__sapper__/*", "public/*"],
+  "compilerOptions": {
+    "types": ["svelte", "node"]
+  }
+}

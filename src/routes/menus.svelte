@@ -1,0 +1,23 @@
+<script lang="ts">
+	import { Button, Menu } from "smelte";
+
+  let open = true;
+	let selected = "";
+
+  const items = [
+		{ value: 1, text: 'One' },
+		{ value: 2, text: 'Two' },
+		{ value: 3, text: 'Three' },
+		{ value: 4, text: 'Four' },
+		{ value: 5, text: 'Five' },
+	];
+
+</script>
+
+<small>Selected: {selected || 'nothing'}</small>
+
+<Menu bind:open {items} bind:value={selected}>
+	<div slot="activator">
+		<Button on:click={() => open = !open}>A menu</Button>
+	</div>
+</Menu>

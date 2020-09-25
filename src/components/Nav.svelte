@@ -1,5 +1,5 @@
-<script>
-	export let segment;
+<script lang="ts">
+	export let segment: string;
 </script>
 
 <style>
@@ -51,6 +51,24 @@
 <nav>
 	<ul>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
+		<li><a aria-current="{segment === 'buttons' ? 'page' : undefined}" href="buttons">buttons</a></li>
+		<li><a aria-current="{segment === 'lists' ? 'page' : undefined}" href="lists">lists</a></li>
+		<li><a aria-current="{segment === 'card' ? 'page' : undefined}" href="card">card</a></li>
+		<li><a aria-current="{segment === 'checkboxes' ? 'page' : undefined}" href="checkboxes">checkboxes</a></li>
+		<li><a aria-current="{segment === 'chip' ? 'page' : undefined}" href="chip">chip</a></li>
+		<li><a aria-current="{segment === 'date-pickers' ? 'page' : undefined}" href="date-pickers">date-pickers</a></li>
+		<li><a aria-current="{segment === 'dialog' ? 'page' : undefined}" href="dialog">dialog</a></li>
+		<li><a aria-current="{segment === 'images' ? 'page' : undefined}" href="images">images</a></li>
+		<li><a aria-current="{segment === 'menus' ? 'page' : undefined}" href="menus">menus</a></li>
+		<li><a aria-current="{segment === 'progress-indicators' ? 'page' : undefined}" href="progress-indicators">progress-indicators</a></li>
+		<li><a aria-current="{segment === 'selects' ? 'page' : undefined}" href="selects">selects</a></li>
+		<li><a aria-current="{segment === 'sliders' ? 'page' : undefined}" href="sliders">sliders</a></li>
+		<li><a aria-current="{segment === 'snackbars' ? 'page' : undefined}" href="snackbars">snackbars</a></li>
+		<li><a aria-current="{segment === 'table' ? 'page' : undefined}" href="table">table</a></li>
+		<li><a aria-current="{segment === 'tabs' ? 'page' : undefined}" href="tabs">tabs</a></li>
+		<li><a aria-current="{segment === 'text-fields' ? 'page' : undefined}" href="text-fields">text-fields</a></li>
+		<li><a aria-current="{segment === 'tooltip' ? 'page' : undefined}" href="tooltip">tooltip</a></li>
+		<li><a aria-current="{segment === 'treeview' ? 'page' : undefined}" href="treeview">treeview</a></li>
 		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches

@@ -1,0 +1,73 @@
+<script lang="ts">
+  import { List } from "smelte";
+
+  const listOneLine = [
+    {
+      text: "Item 1",
+      icon: "favorite"
+    },
+    {
+      text: "Item 2",
+      icon: "favorite"
+    },
+    {
+      text: "Item 3",
+      icon: "favorite"
+    }
+  ];
+
+  const listTwoLines = [
+    {
+      text: "Item 1",
+      icon: "favorite",
+      subheading: "Subheading 1"
+    },
+    {
+      text: "Item 2",
+      icon: "favorite",
+      subheading: "Subheading 2"
+    },
+    {
+      text: "Item 3",
+      icon: "favorite",
+      subheading: "Subheading 3"
+    }
+  ];
+
+  let selectedItem = false;
+
+  const menu = [
+    { to: "/components/text-fields", text: "Text fields" },
+    { to: "/components/buttons", text: "Buttons" },
+    { to: "/components/selection-controls#checkboxes", text: "Checkboxes" },
+    {
+      to: "/components/selection-controls#radio-buttons",
+      text: "Radio buttons"
+    },
+    { to: "/components/selection-controls#switches", text: "Switches" },
+    { to: "/components/lists", text: "Lists" }
+  ];
+</script>
+
+<h6 class="mb-3 mt-6">One-line</h6>
+<List items={listOneLine} />
+<h6 class="mb-3 mt-6">Two-line</h6>
+<List items={listTwoLines} />
+
+<h6 class="mb-3 mt-6">Dense</h6>
+<List dense items={listTwoLines} />
+
+<h6 class="mb-3 mt-6">Custom list element using let:slots</h6>
+
+<small>I selected {selectedItem || "nothing"}.</small>
+
+<List bind:value={selectedItem} items={menu} dense navigation>
+  <li slot="item" let:item>
+    <div
+      class="cursor-pointer p-4 border-secondary-50 border my-2 border-solid duration-200 ease-in"
+      on:click={() => (selectedItem = item.text)}
+      class:bg-secondary-50={selectedItem === item.text}>
+      {selectedItem === item.text ? '👌' : '🙅‍'} {item.text}
+    </div>
+  </li>
+</List>
